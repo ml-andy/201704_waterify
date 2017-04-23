@@ -1,0 +1,4 @@
+https://www.npmjs.com/package/waterify
+http://waterify.bigfish.tv/
+
+https://pixijs.github.io/pixi-particles/examples/explosion3.html
