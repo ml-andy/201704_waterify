@@ -1,0 +1,137 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<title>標題</title>
+<meta charset="UTF-8">
+<meta lang="tw">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width,user-scalable=no">
+<meta name="description" content="標題"/>
+<meta name="keywords" content="標題"/>
+<meta name="copyright" content="design : Andy @ 2016"/>
+<meta property="og:title" content="標題"/>
+<meta property="og:type" content="website"/>    
+<!-- <meta property="og:image" content="images/fbsc.jpg"/> -->
+<meta property="og:site_name" content="標題"/>
+<meta property="og:description" content="標題"/>
+<link rel="shortcut icon" type="image/x-icon" href="favicon.ico"/>
+<!---->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<!--css-->
+<!-- <link rel="stylesheet" href="css/common.css"/> -->
+<!--js-->
+<script src="js/waterify.js"></script>
+<script src="js/common.js"></script>
+<style type="text/css">
+	.wrapper{
+		position:relative;
+		float:left;
+		width:100%;
+	}
+
+	.null1{
+		position:absolute;
+		width:100%;
+		height:13%;
+		z-index:1;
+		left:0;
+		top:0;
+		-webkit-mask-image: -webkit-gradient(linear, left 50%, left bottom, from(rgba(0,0,0,1)), to(rgba(0,0,0,0)));
+		background-color:#000;
+		opacity:0.7;
+	}
+
+	.null2{
+		position:absolute;
+		width:13%;
+		height:100%;
+		z-index:1;
+		left:0;
+		top:0;
+		-webkit-mask-image: -webkit-gradient(linear, left bottom, right bottom, from(rgba(0,0,0,1)), to(rgba(0,0,0,0)));
+		background-color:#000;
+		opacity:0.7;
+	}
+
+	.null3{
+		position:absolute;
+		width:100%;
+		height:13%;
+		z-index:1;
+		left:0;
+		bottom:0;
+		-webkit-mask-image: -webkit-gradient(linear, left 50%, left top, from(rgba(0,0,0,1)), to(rgba(0,0,0,0)));
+		background-color:#000;
+		opacity:0.7;
+	}
+
+	.null4{
+		position:absolute;
+		width:13%;
+		height:100%;
+		z-index:1;
+		right:0;
+		top:0;
+		-webkit-mask-image: -webkit-gradient(linear, right bottom, left bottom, from(rgba(0,0,0,1)), to(rgba(0,0,0,0)));
+		background-color:#000;
+		opacity:0.7;
+	}
+
+	.person{
+		position:relative;
+		float:left;
+		z-index:0;
+		width:100%;
+		height:auto;
+	}
+
+
+</style>
+</head>
+<body>
+	<div class="wrapper">
+		<!-- <img src="images/null.png" class="null" 
+			data-waterify 
+			data-waterify-speed-x="0.5" 
+			data-waterify-speed-y="5" 
+			data-waterify-amount="10" 
+			data-waterify-start="300" 
+			data-waterify-ease="1000"
+			data-waterify-mask-url="mask.png"
+			data-waterify-displacement-url="displacement_map.jpg" /> -->
+		<img src="images/kv_ugly2.jpg" class="null1" 
+			data-waterify 
+			data-waterify-speed-x="-3" 
+			data-waterify-speed-y="-2" 
+			data-waterify-amount="100" 
+			data-waterify-start="500" 
+			data-waterify-ease="0"
+			data-waterify-displacement-url="images/displacement_map4.png" />
+		<img src="images/kv_ugly2.jpg" class="null2" 
+			data-waterify 
+			data-waterify-speed-x="-3" 
+			data-waterify-speed-y="-2" 
+			data-waterify-amount="100" 
+			data-waterify-start="500" 
+			data-waterify-ease="0"
+			data-waterify-displacement-url="images/displacement_map4.png" />
+		<img src="images/kv_ugly2.jpg" class="null3" 
+			data-waterify 
+			data-waterify-speed-x="3" 
+			data-waterify-speed-y="2" 
+			data-waterify-amount="100" 
+			data-waterify-start="500" 
+			data-waterify-ease="0"
+			data-waterify-displacement-url="images/displacement_map4.png" />
+		<img src="images/kv_ugly2.jpg" class="null4" 
+			data-waterify 
+			data-waterify-speed-x="-3" 
+			data-waterify-speed-y="-2" 
+			data-waterify-amount="100" 
+			data-waterify-start="500" 
+			data-waterify-ease="0"
+			data-waterify-displacement-url="images/displacement_map4.png" />
+		<img src="images/kv.jpg" class="person">
+	</div>
+</body>
+</html>
