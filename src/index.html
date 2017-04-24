@@ -23,73 +23,142 @@
 <script src="js/waterify.js"></script>
 <script src="js/common.js"></script>
 <style type="text/css">
+	.loading{
+		position:absolute;
+		width:100%;
+		height:100%;
+		z-index:99999;
+		background-color:#fff;
+	}
+
+	.loading span{
+		position:absolute;
+		width:auto;
+		height:auto;
+		transform:translate(-50%,-50%);
+		-webkit-transform:translate(-50%,-50%);
+		left:50%;
+		top:50%;
+		font-size:13px;
+		text-align:center;
+		color:#333;
+	}
+
 	.wrapper{
 		position:relative;
 		float:left;
-		width:100%;
+		width:1000px;
 	}
 
 	.null1{
 		position:absolute;
-		width:100%;
-		height:13%;
+		width:50%;
+		height:50%;
 		z-index:1;
 		left:0;
 		top:0;
-		-webkit-mask-image: -webkit-gradient(linear, left 50%, left bottom, from(rgba(0,0,0,1)), to(rgba(0,0,0,0)));
+		/*-webkit-mask-image: -webkit-gradient(linear, left 50%, left bottom, from(rgba(0,0,0,1)), to(rgba(0,0,0,0)));*/
 		background-color:#000;
-		opacity:0.7;
+		opacity:1;
+		overflow:hidden;
 	}
 
 	.null2{
 		position:absolute;
-		width:13%;
-		height:100%;
+		width:50%;
+		height:50%;
 		z-index:1;
-		left:0;
+		left:50%;
 		top:0;
-		-webkit-mask-image: -webkit-gradient(linear, left bottom, right bottom, from(rgba(0,0,0,1)), to(rgba(0,0,0,0)));
+		/*-webkit-mask-image: -webkit-gradient(linear, left bottom, right bottom, from(rgba(0,0,0,1)), to(rgba(0,0,0,0)));*/
 		background-color:#000;
-		opacity:0.7;
+		opacity:1;
+		overflow:hidden;
+	}
+
+	.null2 canvas{
+		right:0;
+		top:0;
 	}
 
 	.null3{
 		position:absolute;
-		width:100%;
-		height:13%;
+		width:50%;
+		height:50%;
 		z-index:1;
-		left:0;
+		left:50%;
 		bottom:0;
-		-webkit-mask-image: -webkit-gradient(linear, left 50%, left top, from(rgba(0,0,0,1)), to(rgba(0,0,0,0)));
+		/*-webkit-mask-image: -webkit-gradient(linear, left 50%, left top, from(rgba(0,0,0,1)), to(rgba(0,0,0,0)));*/
 		background-color:#000;
-		opacity:0.7;
+		opacity:1;
+		overflow:hidden;
+	}
+
+	.null3 canvas{
+		right:0;
+		bottom:0;
 	}
 
 	.null4{
 		position:absolute;
-		width:13%;
-		height:100%;
+		width:50%;
+		height:50%;
 		z-index:1;
-		right:0;
-		top:0;
-		-webkit-mask-image: -webkit-gradient(linear, right bottom, left bottom, from(rgba(0,0,0,1)), to(rgba(0,0,0,0)));
+		left:0;
+		bottom:0;
 		background-color:#000;
-		opacity:0.7;
+		/*-webkit-mask-box-image: url(images/mask2.png) 75 stretch;*/
+		/*-webkit-mask-image: url(images/mask.png);*/
+		opacity:1;
+		overflow:hidden;
+	}
+
+	.null4 canvas{
+		leftt:0;
+		bottom:0;
+	}
+	
+	.mask canvas{
+		position:absolute;
+		width:200%;
+		height:200%;
 	}
 
 	.person{
 		position:relative;
 		float:left;
 		z-index:0;
-		width:100%;
+		width:1000px;
 		height:auto;
 	}
 
+	.mask{
+		position:absolute;
+		width:100%;
+		height:100%;
+		left:0;
+		top:0;
+		z-index:1;
+		/*-webkit-mask-image: image(url(images/mask2.png);*/
+	}
+
+	
+
 
 </style>
+<script type="text/javascript">
+	$(window).load(function(){
+		setTimeout(function(){
+			$('.loading').fadeOut();	
+		},1000)
+	})
+</script>
 </head>
 <body>
 	<div class="wrapper">
+		<div class="loading">
+			<span>Loading...</span>
+		</div>
 		<!-- <img src="images/null.png" class="null" 
 			data-waterify 
 			data-waterify-speed-x="0.5" 
@@ -99,38 +168,49 @@
 			data-waterify-ease="1000"
 			data-waterify-mask-url="mask.png"
 			data-waterify-displacement-url="displacement_map.jpg" /> -->
-		<img src="images/kv_ugly2.jpg" class="null1" 
-			data-waterify 
-			data-waterify-speed-x="-3" 
-			data-waterify-speed-y="-2" 
-			data-waterify-amount="100" 
-			data-waterify-start="500" 
-			data-waterify-ease="0"
-			data-waterify-displacement-url="images/displacement_map4.png" />
-		<img src="images/kv_ugly2.jpg" class="null2" 
-			data-waterify 
-			data-waterify-speed-x="-3" 
-			data-waterify-speed-y="-2" 
-			data-waterify-amount="100" 
-			data-waterify-start="500" 
-			data-waterify-ease="0"
-			data-waterify-displacement-url="images/displacement_map4.png" />
-		<img src="images/kv_ugly2.jpg" class="null3" 
-			data-waterify 
-			data-waterify-speed-x="3" 
-			data-waterify-speed-y="2" 
-			data-waterify-amount="100" 
-			data-waterify-start="500" 
-			data-waterify-ease="0"
-			data-waterify-displacement-url="images/displacement_map4.png" />
-		<img src="images/kv_ugly2.jpg" class="null4" 
-			data-waterify 
-			data-waterify-speed-x="-3" 
-			data-waterify-speed-y="-2" 
-			data-waterify-amount="100" 
-			data-waterify-start="500" 
-			data-waterify-ease="0"
-			data-waterify-displacement-url="images/displacement_map4.png" />
+		<div class="mask">
+			<div class="null1">
+				<img src="images/kv_ugly2.jpg"
+					data-waterify 
+					data-waterify-speed-x="-3" 
+					data-waterify-speed-y="-3" 
+					data-waterify-amount="100" 
+					data-waterify-start="500" 
+					data-waterify-ease="0"
+					data-waterify-displacement-url="images/displacement_map4.png" />
+			</div>
+			<div class="null2">
+				<img src="images/kv_ugly2.jpg"
+					data-waterify 
+					data-waterify-speed-x="3" 
+					data-waterify-speed-y="-3" 
+					data-waterify-amount="100" 
+					data-waterify-start="500" 
+					data-waterify-ease="0"
+					data-waterify-displacement-url="images/displacement_map4.png" />
+			</div>
+			<div class="null3">
+				<img src="images/kv_ugly2.jpg"
+					data-waterify 
+					data-waterify-speed-x="3" 
+					data-waterify-speed-y="3" 
+					data-waterify-amount="100" 
+					data-waterify-start="500" 
+					data-waterify-ease="0"
+					data-waterify-displacement-url="images/displacement_map4.png" />
+			</div>
+			<div class="null4">
+				<img src="images/kv_ugly2.jpg"
+					data-waterify 
+					data-waterify-speed-x="-3" 
+					data-waterify-speed-y="3" 
+					data-waterify-amount="100" 
+					data-waterify-start="500" 
+					data-waterify-ease="0"
+					data-waterify-displacement-url="images/displacement_map4.png" />
+			</div>
+		</div>
+		
 		<img src="images/kv.jpg" class="person">
 	</div>
 </body>
